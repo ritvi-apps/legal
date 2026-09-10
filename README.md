@@ -7,16 +7,21 @@ This repository is public on purpose and for one reason: Google Play and the App
 Store require a privacy policy at a URL they can fetch, and Pages cannot serve a
 private repository on the free plan. The app repositories stay private.
 
-| App | Package | Policy | Hosted |
-|---|---|---|---|
-| Aakalan — Split Expenses | `com.riteshf.aakalan` | [privacy](https://ritvi-apps.github.io/legal/aakalan/privacy-policy.html) · [delete account](https://ritvi-apps.github.io/legal/aakalan/delete-account.html) | here |
-| Charades - Act it Out! | `com.riteshf.charadesbollywood` | [charades-bollywood.vercel.app/privacy-policy](https://charades-bollywood.vercel.app/privacy-policy) | Vercel |
+| App | Package | Policy |
+|---|---|---|
+| Aakalan — Split Expenses | `com.riteshf.aakalan` | [privacy](https://ritvi-apps.github.io/legal/aakalan/privacy-policy.html) · [delete account](https://ritvi-apps.github.io/legal/aakalan/delete-account.html) |
+| Charades - Act it Out! | `com.riteshf.charadesbollywood` | [privacy](https://ritvi-apps.github.io/legal/charades/privacy-policy.html) |
+| Tic Tac Toe | `com.riteshf.tictactoe` | [privacy](https://ritvi-apps.github.io/legal/tictactoe/privacy-policy.html) |
 
-Charades is **not** served from this repository on purpose. Its policy is
-already published on Vercel, that is the URL its Play listing declares, and it
-resolves. Publishing a second copy here would create two versions of the same
-legal document that can drift apart — so this repo links to the live one
-instead. New apps should be hosted here.
+Every app is served from here, so there is one copy of each document and one
+place to fix a mistake. That is the whole reason this repo exists: all three
+apps previously published — or failed to publish — their policy somewhere
+different, and two of the three links were dead.
+
+> **Retire the old Charades URL.** `charades-bollywood.vercel.app/privacy-policy`
+> still resolves and still carries the old, wrong contact address. It has no
+> source in any repository, so it cannot be corrected — take the Vercel project
+> down or redirect it here, or it will keep serving a stale legal document.
 
 ## Editing
 
