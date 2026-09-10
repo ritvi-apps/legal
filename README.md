@@ -9,7 +9,7 @@ private repository on the free plan. The app repositories stay private.
 
 | App | Package | Policy | Hosted |
 |---|---|---|---|
-| Aakalan — Split Expenses | `com.riteshf.aakalan` | [/aakalan/privacy-policy.html](https://ritvi-apps.github.io/legal/aakalan/privacy-policy.html) | here |
+| Aakalan — Split Expenses | `com.riteshf.aakalan` | [privacy](https://ritvi-apps.github.io/legal/aakalan/privacy-policy.html) · [delete account](https://ritvi-apps.github.io/legal/aakalan/delete-account.html) | here |
 | Charades - Act it Out! | `com.riteshf.charadesbollywood` | [charades-bollywood.vercel.app/privacy-policy](https://charades-bollywood.vercel.app/privacy-policy) | Vercel |
 
 Charades is **not** served from this repository on purpose. Its policy is
