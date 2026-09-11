@@ -10,11 +10,18 @@ private repository on the free plan. The app repositories stay private.
 | App | Package | Policy |
 |---|---|---|
 | Aakalan — Split Expenses | `com.riteshf.aakalan` | [privacy](https://ritvi-apps.github.io/legal/aakalan/privacy-policy.html) · [delete account](https://ritvi-apps.github.io/legal/aakalan/delete-account.html) |
+| Chitragupt | `com.chitragupt.app` | [privacy](https://chitragupt.ai/legal/privacy) · [delete account](https://ritvi-apps.github.io/legal/chitragupt/delete-account.html) |
 | Charades - Act it Out! | `com.riteshf.charadesbollywood` | [privacy](https://ritvi-apps.github.io/legal/charades/privacy-policy.html) |
 | Tic Tac Toe | `com.riteshf.tictactoe` | [privacy](https://ritvi-apps.github.io/legal/tictactoe/privacy-policy.html) |
 
-Every app is served from here, so there is one copy of each document and one
-place to fix a mistake. That is the whole reason this repo exists: all three
+Chitragupt is the one exception to "everything is served from here": it has its
+own website, so its privacy policy stays at `chitragupt.ai/legal/privacy` where
+it is a real page of the product rather than a copy. Only the account-deletion
+page lives here, because Play wants a URL a reviewer can open **without signing
+in**, and every deletion surface inside the product sits behind auth.
+
+Every other app is served from here, so there is one copy of each document and
+one place to fix a mistake. That is the whole reason this repo exists: all three
 apps previously published — or failed to publish — their policy somewhere
 different, and two of the three links were dead.
 
