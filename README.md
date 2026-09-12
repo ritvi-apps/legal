@@ -9,6 +9,7 @@ private repository on the free plan. The app repositories stay private.
 
 | App | Package | Policy |
 |---|---|---|
+| AskCal: AI Calorie Counter | `com.riteshf.askcal` | [privacy](https://ritvi-apps.github.io/legal/askcal/privacy-policy.html) · [delete data](https://ritvi-apps.github.io/legal/askcal/delete-account.html) |
 | Aakalan — Split Expenses | `com.riteshf.aakalan` | [privacy](https://ritvi-apps.github.io/legal/aakalan/privacy-policy.html) · [delete account](https://ritvi-apps.github.io/legal/aakalan/delete-account.html) |
 | Chitragupt | `com.chitragupt.app` | [privacy](https://chitragupt.ai/legal/privacy) · [delete account](https://ritvi-apps.github.io/legal/chitragupt/delete-account.html) |
 | Charades - Act it Out! | `com.riteshf.charadesbollywood` | [privacy](https://ritvi-apps.github.io/legal/charades/privacy-policy.html) |
