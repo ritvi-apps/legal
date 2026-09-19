@@ -54,8 +54,10 @@ estimate. We do not keep the photo — it is held in memory for the length of th
 request and never written to storage.</p>
 <p>We do cache the <em>result</em> — the dish name, components and numbers — for
 seven days, so re-scanning the identical photo costs you neither a scan nor
-another model call. That cache is keyed by a cryptographic hash of the image,
-not by you, and contains no image data.</p>
+another model call. That cache is keyed by a cryptographic hash of the image
+combined with a hash of your app identifier, so that one person’s cached result
+is never served to anybody else. It contains no image data, and the hash cannot
+be turned back into your identifier.</p>
 <p>Google’s handling of data sent to the Gemini API is governed by
 <a href="https://ai.google.dev/gemini-api/terms">Google’s API terms</a>.</p>
 <p>The “Keep meal photos” switch controls whether the photo is kept
