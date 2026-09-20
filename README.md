@@ -1,59 +1,46 @@
-# ritvi-apps / legal
+# ritvi-apps / legal — permanent redirect shim
 
-Published privacy policies for Ritvi Apps, served by GitHub Pages at
-**https://ritvi-apps.github.io/legal/**
+> **Do not delete this repository. Do not disable Pages on it.**
+> Doing either 404s a privacy-policy URL that two live Play listings point at,
+> and that is grounds for an app to be removed from the store.
 
-This repository is public on purpose and for one reason: Google Play and the App
-Store require a privacy policy at a URL they can fetch, and Pages cannot serve a
-private repository on the free plan. The app repositories stay private.
+The documents themselves now live at
+**<https://ritesh-firodiya.github.io/legal/>**.
 
-| App | Package | Policy |
-|---|---|---|
-| AskCal: AI Calorie Counter | `com.riteshf.askcal` | [privacy](https://ritvi-apps.github.io/legal/askcal/privacy-policy.html) · [delete data](https://ritvi-apps.github.io/legal/askcal/delete-account.html) · [get](https://ritvi-apps.github.io/legal/askcal/get.html) |
-| Aakalan — Split Expenses | `com.riteshf.aakalan` | [privacy](https://ritvi-apps.github.io/legal/aakalan/privacy-policy.html) · [delete account](https://ritvi-apps.github.io/legal/aakalan/delete-account.html) |
-| Chitragupt | `com.chitragupt.app` | [privacy](https://chitragupt.ai/legal/privacy) · [delete account](https://ritvi-apps.github.io/legal/chitragupt/delete-account.html) |
-| Charades - Act it Out! | `com.riteshf.charadesbollywood` | [privacy](https://ritvi-apps.github.io/legal/charades/privacy-policy.html) |
-| Tic Tac Toe | `com.riteshf.tictactoe` | [privacy](https://ritvi-apps.github.io/legal/tictactoe/privacy-policy.html) |
+Everything here is a redirect page. Each one keeps its original path, returns
+200, carries `rel=canonical` to the new address, and renders a visible link so a
+store reviewer with scripting disabled still reaches the document.
 
-Chitragupt is the one exception to "everything is served from here": it has its
-own website, so its privacy policy stays at `chitragupt.ai/legal/privacy` where
-it is a real page of the product rather than a copy. Only the account-deletion
-page lives here, because Play wants a URL a reviewer can open **without signing
-in**, and every deletion surface inside the product sits behind auth.
+## Why it cannot be retired
 
-Every other app is served from here, so there is one copy of each document and
-one place to fix a mistake. That is the whole reason this repo exists: all three
-apps previously published — or failed to publish — their policy somewhere
-different, and two of the three links were dead.
+These URLs are hardcoded inside app builds that are already installed on
+people's phones. An install from last year asks for the old address and will
+never be updated:
 
-> **Retire the old Charades URL.** `charades-bollywood.vercel.app/privacy-policy`
-> still resolves and still carries the old, wrong contact address. It has no
-> source in any repository, so it cannot be corrected — take the Vercel project
-> down or redirect it here, or it will keep serving a stale legal document.
+| App | Source |
+|---|---|
+| Charades | `src/app/settings.tsx:42` |
+| Tic Tac Toe | `src/components/shared/ActionButtons.tsx:13` |
+| Aakalan | `src/app/account.tsx:48` |
+| AskCal | `apps/mobile/src/config/legal.ts:16`, `config/store.ts:33` |
+| Chitragupt | `apps/website/src/components/marketing/SiteFooter.tsx:95` |
 
-## Editing
+Both of the comments in `charades/settings.tsx` and `tic-tac-toe/ActionButtons.tsx`
+record an earlier version of this exact mistake — a renamed repo and a Pages
+site that was never enabled, both of which 404'd in production.
 
-Each policy is a single self-contained HTML file — no build step, no
-dependencies. Push to `main` and Pages redeploys.
+New app builds should point directly at `ritesh-firodiya.github.io/legal/...`.
+The shims exist for the builds that cannot be changed.
 
-The source of truth for a policy is the copy in that app's own repository
-(`.context/documents/research/privacy-policy.html`). Change it there, then copy
-it here, so the app and the published page cannot disagree.
+## Map
 
-**A store listing URL is not something to break casually.** Play checks that the
-URL resolves, and an app whose policy 404s can be taken down. Do not rename this
-repository or move these paths without updating both store listings and the
-in-app links that point at them.
+| Old path | Now serves |
+|---|---|
+| `/legal/` | `/legal/` on the new site |
+| `/legal/terms.html` | `/legal/terms.html` |
+| `/legal/support/` | `/support/` |
+| `/legal/<app>/<doc>.html` | the same path on the new site |
 
-## `askcal/get.html`
+## Deploy
 
-The link AskCal puts on a shared post. AskCal is two store listings — Play
-froze `com.riteshf.askcal` at first publish and iOS is its own bundle — so
-whichever one went on the post would be wrong for half the people who saw it.
-This page reads the visitor's device and forwards to the right store.
-
-Both store links are in the markup and visible without JavaScript: a crawler
-building a link preview, a browser with scripting off, and any desktop visitor
-all get a working page rather than a blank redirect. Desktop is left to choose
-rather than guessed at — a machine that can install neither is not helped by
-being sent to one.
+GitHub Pages, branch `main`, root. No build step.
